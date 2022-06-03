@@ -41,15 +41,37 @@ namespace test_db
             if (table.Rows.Count == 1)
             {
                 MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Form1 frm1 = new Form1();
+                Form3 frm3 = new Form3();
                 this.Hide();
-                frm1.ShowDialog();
+                frm3.ShowDialog();
                 this.Show();
             }
             else
             {
                 MessageBox.Show("Такого аккаунта не существует", "Аккаунта не существует!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.PasswordChar = '⚫';
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox2.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                textBox2.UseSystemPasswordChar = false;
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
     }
 }

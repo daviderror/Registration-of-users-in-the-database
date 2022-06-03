@@ -67,5 +67,13 @@ namespace test_db
             Form1 oldfrm = new Form1();
             oldfrm.Close();
         }
+
+        
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+        }
     }
 }
